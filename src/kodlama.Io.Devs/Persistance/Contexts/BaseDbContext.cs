@@ -13,7 +13,7 @@ namespace Persistance.Contexts
     {
         protected IConfiguration Configuration { get; set; }
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
-
+        
         public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {
             Configuration = configuration;
@@ -32,7 +32,8 @@ namespace Persistance.Contexts
             });
 
 
-
+            ProgrammingLanguage[] programmingLanguagesEntitySeeds = { new(1, "Python", "3.15"), new(2, "C#", "10") };
+            modelBuilder.Entity<ProgrammingLanguage>().HasData(programmingLanguagesEntitySeeds);
            
 
         }
