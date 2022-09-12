@@ -15,9 +15,7 @@ namespace Application.Features.Technologies.Commands.DeleteTechnology
     public class DeleteTechnologyCommand:IRequest<DeletedTechnologyDto>
     {
         public int Id { get; set; }
-        public int ProgrammingLanguageId { get; set; }
-        public string Name { get; set; }
-        public string Version { get; set; }
+  
 
         public class DeleteTechnologyCommandHandler : IRequestHandler<DeleteTechnologyCommand, DeletedTechnologyDto>
         {
@@ -34,8 +32,9 @@ namespace Application.Features.Technologies.Commands.DeleteTechnology
 
             public async Task<DeletedTechnologyDto> Handle(DeleteTechnologyCommand request, CancellationToken cancellationToken)
             {
-                Technology mappedTechnology = _mapper.Map<Technology>(request);
-                Technology deletedTechnology = await _technologyRepository.DeleteAsync(mappedTechnology);
+                Technology? technology = await _technologyRepository.GetAsync(t => t.Id == request.Id);
+                await _technologyBusinessRules.TechnologyShouldExistWhenRequested(technology);
+                Technology deletedTechnology = await _technologyRepository.DeleteAsync(technology);
                 DeletedTechnologyDto deletedTechnologyDto = _mapper.Map<DeletedTechnologyDto>(deletedTechnology);
 
                 return deletedTechnologyDto;

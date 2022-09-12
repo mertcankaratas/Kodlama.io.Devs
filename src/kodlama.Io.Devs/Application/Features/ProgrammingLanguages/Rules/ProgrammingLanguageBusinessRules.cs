@@ -25,9 +25,9 @@ namespace Application.Features.ProgrammingLanguages.Rules
             if (result.Items.Any()) throw new BusinessException("Programming Language name exists.");
         }
 
-        public async Task ProgrammingLanguageShouldExistWhenRequested(int id)
+        public async Task ProgrammingLanguageShouldExistWhenRequested(ProgrammingLanguage programmingLanguage)
         {
-            ProgrammingLanguage? programmingLanguage = await _programmingLanguageRepository.GetAsync(p => p.Id == id);
+
             if (programmingLanguage==null) throw new BusinessException("Request Programming Language does not exists.");
         }
 

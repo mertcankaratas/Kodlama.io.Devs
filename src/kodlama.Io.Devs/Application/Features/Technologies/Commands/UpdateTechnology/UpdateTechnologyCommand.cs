@@ -35,8 +35,9 @@ namespace Application.Features.Technologies.Commands.UpdateTechnology
 
             public async Task<UpdatedTechnologyDto> Handle(UpdateTechnologyCommand request, CancellationToken cancellationToken)
             {
-                Technology mappedTechnology = _mapper.Map<Technology>(request);
-                Technology updatedTechnology = await _technologyRepository.UpdateAsync(mappedTechnology);
+                Technology? technology = await _technologyRepository.GetAsync(t => t.Id == request.Id);
+                await _technologyBusinessRules.TechnologyShouldExistWhenRequested(technology);
+                Technology updatedTechnology = await _technologyRepository.UpdateAsync(_mapper.Map(request,technology));
                 UpdatedTechnologyDto updatedTechnologyDto = _mapper.Map<UpdatedTechnologyDto>(updatedTechnology);
 
                 return updatedTechnologyDto;

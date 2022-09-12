@@ -28,9 +28,9 @@ namespace Application.Features.Technologies.Rules
         }
 
 
-        public async Task TechnologyShouldExistWhenRequested(int id)
+        public async Task TechnologyShouldExistWhenRequested(Technology technology)
         {
-            Technology? technology = await _technologyRepository.GetAsync(b => b.Id == id);
+            
             if (technology == null) throw new BusinessException("Requested Technology does not exists");
 
         }

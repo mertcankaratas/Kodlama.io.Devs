@@ -33,8 +33,8 @@ namespace Application.Features.Technologies.Queries.GetByIdTechnology
             public async Task<TechnologyGetByIdDto> Handle(GetByIdTechnologyQuery request, CancellationToken cancellationToken)
             {
 
-                await _technologyBusinessRules.TechnologyShouldExistWhenRequested(request.Id);
                 Technology? technology = await _technologyRepository.GetAsync(t=>t.Id==request.Id);
+                await _technologyBusinessRules.TechnologyShouldExistWhenRequested(technology);
                 TechnologyGetByIdDto mappedTechnologyGetByIdDto = _mapper.Map<TechnologyGetByIdDto>(technology);    
 
 
