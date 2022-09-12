@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Persistance.Contexts;
+using Persistence.Contexts;
 using Persistance.Repositories;
 using System;
 using System.Collections.Generic;
@@ -21,6 +21,7 @@ namespace Persistance
                                                      options.UseSqlServer(
                                                          configuration.GetConnectionString("KodlamaIoDevConnectionString")));
             services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
+            services.AddScoped<ITechnologyRepository, TechnologyRepository>();
 
             return services;
         }

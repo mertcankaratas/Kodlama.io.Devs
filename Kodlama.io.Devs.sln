@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "corePackages", "corePackage
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kodlama.Io.Devs", "kodlama.Io.Devs", "{E9A7AFFF-B34C-41A8-B79F-B226194C04C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\kodlama.Io.Devs\Domain\Domain.csproj", "{E6AC7DC4-70A1-41CB-874F-08504095B7B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\kodlama.Io.Devs\Domain\Domain.csproj", "{E6AC7DC4-70A1-41CB-874F-08504095B7B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\kodlama.Io.Devs\Application\Application.csproj", "{CD15159A-8FBF-4AF5-9FC0-8AA3CBF87919}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\kodlama.Io.Devs\Application\Application.csproj", "{CD15159A-8FBF-4AF5-9FC0-8AA3CBF87919}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\kodlama.Io.Devs\Infrastructure\Infrastructure.csproj", "{3DE11445-491D-4BBB-9585-B050BC8ADE0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\kodlama.Io.Devs\Infrastructure\Infrastructure.csproj", "{3DE11445-491D-4BBB-9585-B050BC8ADE0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance", "src\kodlama.Io.Devs\Persistance\Persistance.csproj", "{6A6335AB-46E1-4EDB-8FD1-6F806CC3BFD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\kodlama.Io.Devs\Persistance\Persistence.csproj", "{6A6335AB-46E1-4EDB-8FD1-6F806CC3BFD8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "src\corePackages\Core.Application\Core.Application.csproj", "{6301C870-4306-4BC2-A21D-AD624B7FB974}"
 EndProject
@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistence", "src\cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security", "src\corePackages\Core.Security\Core.Security.csproj", "{A22F8F58-0401-4FF3-AD39-4809DEA787D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "src\kodlama.Io.Devs\WebAPI\WebAPI.csproj", "{5ACE1CEE-78CA-43DD-A21F-8591EBBEE7E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "src\kodlama.Io.Devs\WebAPI\WebAPI.csproj", "{5ACE1CEE-78CA-43DD-A21F-8591EBBEE7E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
