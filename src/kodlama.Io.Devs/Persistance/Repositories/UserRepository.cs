@@ -18,7 +18,16 @@ namespace Persistence.Repositories
 
         public IList<OperationClaim> GetClaims(User user)
         {
-            throw new NotImplementedException();
+          
+            
+                var result = from operationClaim in Context.OperationClaims
+                             join userOperationClaim in Context.UserOperationClaims
+                                 on operationClaim.Id equals userOperationClaim.OperationClaimId
+                             where userOperationClaim.UserId == user.Id
+                             select new OperationClaim { Id = operationClaim.Id, Name = operationClaim.Name };
+                return result.ToList();
+
+            
         }
     }
 }

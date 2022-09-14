@@ -25,7 +25,7 @@ namespace Persistence.Contexts
         {
             Configuration = configuration;
         }
-
+       
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -90,6 +90,9 @@ namespace Persistence.Contexts
 
             Technology[] tecnologyEntitySeeds = { new(1, 1, "Django", "4.1.1"), new(2, 2, "WPF", "4.6"), new(3, 3, "Spring", "5.3.22"), new(4, 4, "React", "18.2.0") };
             modelBuilder.Entity<Technology>().HasData(tecnologyEntitySeeds);
+
+            OperationClaim[] operationClaimsEntitySeeds = { new(1,"admin"),new(2,"user"),new(3,"add,get,update") };
+            modelBuilder.Entity<OperationClaim>().HasData(operationClaimsEntitySeeds);
         }
 
     }
