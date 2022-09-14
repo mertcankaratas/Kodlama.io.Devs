@@ -2,7 +2,9 @@
 using Core.CrossCuttingConcerns.Exceptions;
 using Core.Persistence.Paging;
 using Core.Security.Entities;
+using Core.Security.Hashing;
 using Domain.Entitites;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +25,24 @@ namespace Application.Features.Users.Rules
 
         public async Task UserAccountCanNotBeDuplicatedWhenInserted(string email)
         {
-            IPaginate<User> result = await _userRepository.GetListAsync(b => b.Email ==email );
+            IPaginate<User> result = await _userRepository.GetListAsync(b => b.Email == email);
             if (result.Items.Any()) throw new BusinessException("User Account Mail exists.");
         }
 
-        
+
+        public async Task UserShouldExistWhenRequested(User user)
+        {
+            
+            if (user == null) throw new BusinessException("User Email does not exists");
+
+        }
+
+        public async Task VerifyPassword(string password, byte[] passwordHash, byte[] passwordSalt)
+        {
+
+            if (!HashingHelper.VerifyPasswordHash(password, passwordHash, passwordSalt))
+                throw new BusinessException("Pasword Error");
+
+        }
     }
 }

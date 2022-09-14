@@ -15,7 +15,6 @@
 		<Folder Include="Features\GithubProfiles\Queries\" />
 		<Folder Include="Features\GithubProfiles\Profiles\" />
 		<Folder Include="Features\ProgrammingLanguages\Constants\" />
-		<Folder Include="Features\Users\Commands\Login\" />
 		<Folder Include="Features\Users\Constants\" />
 		<Folder Include="Features\Users\Models\" />
 		<Folder Include="Features\Users\Queries\" />
