@@ -11,15 +11,15 @@ namespace Domain.Entitites
     {
 
         public int UserId { get; set; }
-        public int RepoName { get; set; }
-        public int RepoUrl { get; set; }
+        public string RepoName { get; set; }
+        public string RepoUrl { get; set; }
 
         public GithubProfile()
         {
 
         }
 
-        public GithubProfile(int id,int userId, int repoName, int repoUrl):this()
+        public GithubProfile(int id,int userId, string repoName, string repoUrl):this()
         {
             Id = id;
             UserId = userId;

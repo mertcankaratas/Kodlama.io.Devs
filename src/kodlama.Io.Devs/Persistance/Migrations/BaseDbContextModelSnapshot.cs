@@ -8,7 +8,7 @@ using Persistence.Contexts;
 
 #nullable disable
 
-namespace Persistance.Migrations
+namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
     partial class BaseDbContextModelSnapshot : ModelSnapshot
@@ -184,12 +184,14 @@ namespace Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("RepoName")
-                        .HasColumnType("int")
+                    b.Property<string>("RepoName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("RepoName");
 
-                    b.Property<int>("RepoUrl")
-                        .HasColumnType("int")
+                    b.Property<string>("RepoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("RepoUrl");
 
                     b.Property<int>("UserId")
