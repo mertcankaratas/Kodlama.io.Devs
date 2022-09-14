@@ -16,6 +16,8 @@ namespace Persistence.Contexts
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
         public DbSet<Technology> Technologies { get; set; }
 
+        public DbSet<GithubProfile> GithubProfiles { get; set; }
+        //Auth
         public DbSet<User> Users { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
@@ -47,6 +49,16 @@ namespace Persistence.Contexts
                 t.Property(p => p.Name).HasColumnName("Name");
                 t.Property(p => p.Version).HasColumnName("Version");
                 t.HasOne(p => p.ProgrammingLanguage);
+            });
+
+            modelBuilder.Entity<GithubProfile>(t =>
+            {
+                t.ToTable("GithubProfiles").HasKey(k => k.Id);
+                t.Property(p => p.Id).HasColumnName("Id");
+                t.Property(p => p.UserId).HasColumnName("UserId");
+                t.Property(p => p.RepoName).HasColumnName("RepoName");
+                t.Property(p => p.RepoUrl).HasColumnName("RepoUrl");
+               
             });
 
 
