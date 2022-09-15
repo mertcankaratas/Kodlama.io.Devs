@@ -16,6 +16,9 @@ namespace Application.Features.GithubProfiles.Profiles
         {
             CreateMap<GithubProfile, CreateGithubProfileCommand>().ReverseMap();
             CreateMap<GithubProfile, CreatedGithubProfileDto>().ReverseMap();
+
+            CreateMap<GithubProfile, CreateGithubProfileCommand>().ReverseMap();
+            CreateMap<GithubProfile,DeletedGithubProfileDto>().ReverseMap();
         }
     }
 }

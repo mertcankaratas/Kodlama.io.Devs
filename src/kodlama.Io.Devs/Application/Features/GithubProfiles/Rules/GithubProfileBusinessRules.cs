@@ -24,5 +24,10 @@ namespace Application.Features.GithubProfiles.Rules
             IPaginate<GithubProfile> result = await _githubProfileRepository.GetListAsync(b => b.RepoUrl == url);
             if (result.Items.Any()) throw new BusinessException("Github Profile exists.");
         }
+
+        public async Task GithubProfileShouldExistWhenRequested(GithubProfile githubProfile)
+        {
+            if(githubProfile==null) throw new BusinessException("Request GithubProfile does not exists.");
+        }
     }
 }
