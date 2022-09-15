@@ -8,9 +8,7 @@
 
 	<ItemGroup>
 		<Folder Include="Features\GithubProfiles\Commands\CreateGithubProfile\" />
-		<Folder Include="Features\GithubProfiles\Commands\UpdateGithubProfile\" />
 		<Folder Include="Features\GithubProfiles\Constants\" />
-		<Folder Include="Features\GithubProfiles\Queries\" />
 		<Folder Include="Features\ProgrammingLanguages\Constants\" />
 		<Folder Include="Features\Users\Constants\" />
 		<Folder Include="Features\Users\Models\" />
