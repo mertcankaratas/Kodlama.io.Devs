@@ -1,4 +1,7 @@
 ﻿using Application.Services.Repositories;
+using Core.CrossCuttingConcerns.Exceptions;
+using Core.Persistence.Paging;
+using Domain.Entitites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +17,12 @@ namespace Application.Features.GithubProfiles.Rules
         public GithubProfileBusinessRules(IGithubProfileRepository githubProfileRepository)
         {
             _githubProfileRepository = githubProfileRepository;
+        }
+
+        public async Task GithubProfileCanNotBeDuplicatedWhenInserted(string url)
+        {
+            IPaginate<GithubProfile> result = await _githubProfileRepository.GetListAsync(b => b.RepoUrl == url);
+            if (result.Items.Any()) throw new BusinessException("Github Profile exists.");
         }
     }
 }

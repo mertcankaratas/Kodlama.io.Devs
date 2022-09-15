@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using Application.Features.GithubProfiles.Commands.CreateGithubProfile;
+using Application.Features.GithubProfiles.Dtos;
+using AutoMapper;
+using Domain.Entitites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +14,8 @@ namespace Application.Features.GithubProfiles.Profiles
     {
         public MappingProfiles()
         {
-
+            CreateMap<GithubProfile, CreateGithubProfileCommand>().ReverseMap();
+            CreateMap<GithubProfile, CreatedGithubProfileDto>().ReverseMap();
         }
     }
 }

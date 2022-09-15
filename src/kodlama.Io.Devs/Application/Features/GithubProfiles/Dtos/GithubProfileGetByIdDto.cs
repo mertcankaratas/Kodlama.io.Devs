@@ -10,7 +10,7 @@ namespace Application.Features.GithubProfiles.Dtos
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public int RepoName { get; set; }
-        public int RepoUrl { get; set; }
+        public string RepoName { get; set; }
+        public string RepoUrl { get; set; }
     }
 }
