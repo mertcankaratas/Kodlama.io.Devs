@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Users.Rules
+namespace Application.Features.Auths.Rules
 {
     public class UserBusinessRules
     {

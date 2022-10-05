@@ -1,8 +1,5 @@
-﻿using Application.Features.ProgrammingLanguages.Commands.CreateProgrammingLanguage;
-using Application.Features.ProgrammingLanguages.Dtos;
-using Application.Features.Users.Commands.Login;
-using Application.Features.Users.Commands.Register;
-using Application.Features.Users.Dtos;
+﻿using Application.Features.Auths.Commands.Register;
+using Application.Features.Auths.Dtos;
 using Core.Security.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,19 +12,14 @@ namespace WebAPI.Controllers
     {
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterUserCommand registerUserCommand)
+        public async Task<IActionResult> Register([FromBody] RegisterCommand registerCommand)
         {
-            var result = await Mediator.Send(registerUserCommand);
+            var result = await Mediator.Send(registerCommand);
             return Created("", result);
         }
 
 
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginUserCommand loginUserCommand)
-        {
-            var result = await Mediator.Send(loginUserCommand);
-            return Created("", result);
-        }
+        
     }
 }

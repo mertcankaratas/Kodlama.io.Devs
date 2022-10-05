@@ -1,6 +1,5 @@
-﻿using Application.Features.Users.Commands.Login;
-using Application.Features.Users.Commands.Register;
-using Application.Features.Users.Dtos;
+﻿using Application.Features.Auths.Commands.Register;
+using Application.Features.Auths.Dtos;
 using AutoMapper;
 using Core.Security.Dtos;
 using Core.Security.Entities;
@@ -11,17 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Users.Profiles
+namespace Application.Features.Auths.Profiles
 {
     public class MappingProfiles:Profile
     {
         public MappingProfiles()
         {
-            CreateMap<User, RegisterUserCommand>().ReverseMap();
+            CreateMap<User, RegisterCommand>().ReverseMap();
             CreateMap<User, UserForRegisterDto>().ReverseMap();
             CreateMap<User, AccessToken>().ReverseMap();
 
-            CreateMap<User, LoginUserCommand>().ReverseMap();
+            
            
         }
     }

@@ -7,12 +7,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Folder Include="Features\Auths\Commands\Login\" />
 		<Folder Include="Features\GithubProfiles\Commands\CreateGithubProfile\" />
 		<Folder Include="Features\GithubProfiles\Constants\" />
 		<Folder Include="Features\ProgrammingLanguages\Constants\" />
-		<Folder Include="Features\Users\Constants\" />
-		<Folder Include="Features\Users\Models\" />
-		<Folder Include="Features\Users\Queries\" />
+		<Folder Include="Features\Auths\Constants\" />
+		<Folder Include="Features\Auths\Models\" />
+		<Folder Include="Features\Auths\Queries\" />
 	</ItemGroup>
 
 
