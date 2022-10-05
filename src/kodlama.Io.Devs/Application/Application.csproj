@@ -7,7 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Features\Auths\Commands\Login\" />
 		<Folder Include="Features\GithubProfiles\Commands\CreateGithubProfile\" />
 		<Folder Include="Features\GithubProfiles\Constants\" />
 		<Folder Include="Features\ProgrammingLanguages\Constants\" />
