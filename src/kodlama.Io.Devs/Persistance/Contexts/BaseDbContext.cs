@@ -21,7 +21,7 @@ namespace Persistence.Contexts
         public DbSet<User> Users { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
-
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {
@@ -95,6 +95,23 @@ namespace Persistence.Contexts
                 a.HasOne(c => c.User);
             });
 
+            modelBuilder.Entity<RefreshToken>(a =>
+            {
+                a.ToTable("RefreshTokens").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(c => c.UserId).HasColumnName("UserId");
+                a.Property(c => c.Token).HasColumnName("Token");
+                a.Property(c => c.Expires).HasColumnName("Expires");
+                a.Property(c => c.Created).HasColumnName("Created");
+                a.Property(c => c.CreatedByIp).HasColumnName("CreatedByIp");
+                a.Property(c => c.CreatedByIp).HasColumnName("CreatedByIp");
+                a.Property(c => c.Revoked).HasColumnName("Revoked");
+                a.Property(c => c.RevokedByIp).HasColumnName("RevokedByIp");
+                a.Property(c => c.ReplacedByToken).HasColumnName("ReplacedByToken");
+                a.Property(c => c.ReasonRevoked).HasColumnName("ReasonRevoked");
+
+                a.HasOne(c => c.User);
+            });
 
 
             ProgrammingLanguage[] programmingLanguagesEntitySeeds = { new(1, "Python", "3.15"), new(2, "C#", "10"),new (3,"Java","18"),new(4,"Javascript","ES6") };
