@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Auths.Rules
 {
-    public class UserBusinessRules
+    public class AuthBusinessRules
     {
         private readonly IUserRepository _userRepository;
 
-        public UserBusinessRules(IUserRepository userRepository)
+        public AuthBusinessRules(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
