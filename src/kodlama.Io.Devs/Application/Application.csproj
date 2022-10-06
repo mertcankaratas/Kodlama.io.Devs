@@ -10,8 +10,6 @@
 		<Folder Include="Features\GithubProfiles\Commands\CreateGithubProfile\" />
 		<Folder Include="Features\GithubProfiles\Constants\" />
 		<Folder Include="Features\OperationClaims\Constants\" />
-		<Folder Include="Features\OperationClaims\Models\" />
-		<Folder Include="Features\OperationClaims\Queries\GetListOperationClaim\" />
 		<Folder Include="Features\ProgrammingLanguages\Constants\" />
 		<Folder Include="Features\Auths\Constants\" />
 		<Folder Include="Features\Auths\Models\" />
@@ -29,6 +27,7 @@
 		<ProjectReference Include="..\..\corePackages\Core.Application\Core.Application.csproj" />
 		<ProjectReference Include="..\..\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
 		<ProjectReference Include="..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
+		<ProjectReference Include="..\..\corePackages\Core.Security\Core.Security.csproj" />
 		<ProjectReference Include="..\Domain\Domain.csproj" />
 	</ItemGroup>
 
