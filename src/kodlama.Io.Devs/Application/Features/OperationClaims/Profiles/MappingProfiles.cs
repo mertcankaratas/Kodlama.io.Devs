@@ -1,4 +1,5 @@
 ﻿using Application.Features.OperationClaims.Command.CreateOperationClaim;
+using Application.Features.OperationClaims.Command.DeleteOperationClaim;
 using Application.Features.OperationClaims.Dtos;
 using AutoMapper;
 using Core.Security.Entities;
@@ -17,6 +18,9 @@ namespace Application.Features.OperationClaims.Profiles
         {
             CreateMap<OperationClaim, CreatedOperationClaimDto>().ReverseMap();
             CreateMap<OperationClaim, CreateOperationClaimCommand>().ReverseMap();
+
+            CreateMap<OperationClaim,DeletedOperationClaimDto>().ReverseMap();
+            CreateMap<OperationClaim, DeleteOperationClaimCommand>().ReverseMap();
 
         }
     }

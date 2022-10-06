@@ -9,7 +9,6 @@
 	<ItemGroup>
 		<Folder Include="Features\GithubProfiles\Commands\CreateGithubProfile\" />
 		<Folder Include="Features\GithubProfiles\Constants\" />
-		<Folder Include="Features\OperationClaims\Command\DeleteOperationClaim\" />
 		<Folder Include="Features\OperationClaims\Command\UpdateOperationClaim\" />
 		<Folder Include="Features\OperationClaims\Constants\" />
 		<Folder Include="Features\OperationClaims\Models\" />
